@@ -1,44 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+The project is under development <hr />
+And gradually it will be published, since it will be completed, on a free hosting [www.samikoma.zzz.com.ua](http://samikoma.zzz.com.ua). <br />
 
+This application is a sandbox for [Daily Coding Problem](https://www.dailycodingproblem.com/) <br />
+I get a task every day for my personal account [Daily Coding Problems](https://www.dailycodingproblem.com/). <hr />
+You can go without registration and try to solve the problems that I have completed and published here. <br />
+You can also register and publish your tasks, which will be for everyone.<br />
+* Tasks are divided into 4 categories:
+	* Google
+  * Microsoft
+  * Facebook
+  * Amazon <br />
+##
+These are the names of the corporations which provided the tasks.
+
+## Features
+
+* uses:
+  * React (create-react-app)
+  * firebase 6.0.0
+  * react-router 4.2.0
+  * redux
+* features:
+  * Sign In
+  * Sign Up
+  * Sign Out
+  * Password Forget
+  * Password Change
+  * Protected Routes with Authorization
+  * Database: Users
+
+### If you want to run it locally you will need : 
+create  in folder <code>src/firebase</code> file <code>firebase.js</code> <br />
+And fill it in next :<br/>
+<code>import * as firebase from 'firebase/app';<br/>
+import 'firebase/auth';<br/>
+import 'firebase/database';<br/>
+
+const config = { // Firebase data API<br/>
+&ensp;  apiKey: 'XXXX',<br/>
+&ensp;	authDomain: 'XXXXXX',<br/>
+&ensp;	databaseURL: 'XXXXXXX',<br/>
+&ensp;	projectId: 'XXXXXXX',<br/>
+&ensp;	storageBucket: 'XXXXXXX',<br/>
+&ensp;	messagingSenderId: 'XXXXXXXX',<br/>
+};<br/>
+
+if (!firebase.apps.length) {<br/>
+&ensp;	firebase.initializeApp(config);<br/>
+}
+
+export const auth = firebase.auth();<br/>
+export const db = firebase.database();<br/>
+// export const provider = new firebase.auth.FacebookAuthProvider();
+</code>
+### Use your own Firebase Credentials
+
+* visit https://firebase.google.com/ and create a Firebase App
+* copy and paste your Credentials from your Firebase App into src/firebase/firebase.js
+* activate Email/Password Sign-In Method in your Firebase App
 In the project directory, you can run:
 
-### `npm start`
+### `npm install # or yarn install`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Start:  <br />
+###	`npm start # or yarn start`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
