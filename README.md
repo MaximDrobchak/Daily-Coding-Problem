@@ -1,10 +1,10 @@
 
-The project is under development <hr />
+<strong>The project is under development</strong> <hr />
 And gradually it will be published, since it will be completed, on a free hosting [www.samikoma.zzz.com.ua](http://samikoma.zzz.com.ua). <br />
 
 This application is a sandbox for [Daily Coding Problem](https://www.dailycodingproblem.com/) <br />
-I get a task every day for my personal account [Daily Coding Problems](https://www.dailycodingproblem.com/). <hr />
-You can go without registration and try to solve the problems that I have completed and published here. <br />
+I get a task every day for my personal account [Daily Coding Problems](https://www.dailycodingproblem.com/). 
+### You can go without registration and try to solve the problems that I have completed and published here. <br />
 You can also register and publish your tasks, which will be for everyone.<br />
 * Tasks are divided into 4 categories:
 	* Google
@@ -32,7 +32,7 @@ These are the names of the corporations which provided the tasks.
 
 ### If you want to run it locally you will need : 
 create  in folder <code>src/firebase</code> file <code>firebase.js</code> <br />
-And fill it in next :<br/>
+&ensp; And fill it in next :<br/><br/>
 <code>import * as firebase from 'firebase/app';<br/>
 import 'firebase/auth';<br/>
 import 'firebase/database';<br/>

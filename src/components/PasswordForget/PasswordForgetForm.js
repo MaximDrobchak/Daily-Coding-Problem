@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { auth } from '../../firebase';
 
 import { propKey } from '../PasswordChange';
+import { Button } from './../Elements';
 
 const INITIAL_STATE = {
 	email: '',
@@ -37,10 +38,15 @@ class PasswordForgetForm extends Component {
 					type="text"
 					placeholder="Email Address"
 				/>
-
-				<button disabled={isInvalid} type="submit">
+				<br />
+				<Button
+					color="black"
+					disabled={isInvalid}
+					type="submit"
+				>
 					Reset My Password
-				</button>
+				</Button>
+				<br />
 
 				{error && <p>{error.message}</p>}
 			</form>

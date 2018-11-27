@@ -1,0 +1,35 @@
+@import '../../index.scss';
+.LandingBar {
+	span {
+		position: relative;
+		margin-left: 40%;
+		font-size: 2.2em;
+	}
+	ul {
+		list-style: none;
+		margin: 0 0 20px 0;
+		padding: 0;
+
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	li {
+		margin: 20px 20px 0px 30px;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 2em;
+		color: blue;
+	}
+
+	a,
+	a:visited {
+		color: mediumvioletred;
+	}
+
+	a:hover {
+		color: tomato;
+	}
+}

@@ -3,6 +3,7 @@ import { auth } from '../../firebase';
 
 import * as routes from '../../constants/routes';
 import { propKey } from './../PasswordChange';
+import { Button } from './../Elements';
 
 const INITIAL_STATE = {
 	email: '',
@@ -43,8 +44,8 @@ class SignInForm extends Component {
 					onChange={e => this.setStateWithEvent(e, 'email')}
 					type="text"
 					placeholder="Email Address"
-				/>
-
+				/>{' '}
+				<br />
 				<input
 					value={password}
 					onChange={e =>
@@ -53,11 +54,14 @@ class SignInForm extends Component {
 					type="password"
 					placeholder="Password"
 				/>
-
-				<button disabled={isInvalid} type="submit">
+				<br />
+				<Button
+					color="black"
+					disabled={isInvalid}
+					type="submit"
+				>
 					Sign In
-				</button>
-
+				</Button>
 				{error && <p>{error.message}</p>}
 			</form>
 		);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as routes from '../../constants/routes';
 import { auth, db } from '../../firebase';
 import { propKey } from '../PasswordChange';
+import { Button } from './../Elements';
 
 const INITIAL_STATE = {
 	email: '',
@@ -64,13 +65,15 @@ class SignUpForm extends Component {
 					}
 					type="text"
 					placeholder="Full Name"
-				/>
+				/>{' '}
+				<br />
 				<input
 					value={email}
 					onChange={e => this.setStateWithEvent(e, 'email')}
 					type="text"
 					placeholder="Email Address"
-				/>
+				/>{' '}
+				<br />
 				<input
 					value={passwordOne}
 					onChange={e =>
@@ -78,7 +81,8 @@ class SignUpForm extends Component {
 					}
 					type="password"
 					placeholder="Password"
-				/>
+				/>{' '}
+				<br />
 				<input
 					value={passwordTwo}
 					onChange={e =>
@@ -87,10 +91,14 @@ class SignUpForm extends Component {
 					type="password"
 					placeholder="Confirm Password"
 				/>
-				<button disabled={isInvalid} type="submit">
+				<br />
+				<Button
+					color="black"
+					disabled={isInvalid}
+					type="submit"
+				>
 					Sign Up
-				</button>
-
+				</Button>
 				{error && <p>{error.message}</p>}
 			</form>
 		);

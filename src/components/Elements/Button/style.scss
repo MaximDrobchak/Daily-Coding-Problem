@@ -1,0 +1,28 @@
+.Button {
+	padding: 10px;
+	background: none;
+	cursor: pointer;
+	transition: color 0.25s ease-in-out;
+	transition: background 0.25s ease-in-out;
+}
+
+.Button_white {
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.Button_white:hover {
+	color: #000;
+	background: #fff;
+}
+
+.Button_black {
+	border: 1px solid #000;
+	color: #fff;
+	background: #000;
+}
+
+.Button_black:hover {
+	color: #000;
+	background: #fff;
+}

@@ -1,8 +1,10 @@
 import React from 'react';
 import { auth } from '../../firebase';
 
+import { Button } from './../Elements';
+
 export const SingOutButton = () => (
-	<button type="button" onClick={auth.doSignOut}>
+	<Button style={{ alignSelf: 'end' }} onClick={auth.doSignOut}>
 		Sign Out
-	</button>
+	</Button>
 );

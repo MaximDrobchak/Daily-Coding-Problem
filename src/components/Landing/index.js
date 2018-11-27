@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
-
+import './style.scss';
 const Landing = () => {
 	return (
-		<div>
-			<h2>Landing Page</h2>
+		<div className="LandingBar">
+			<span>Daily Coding Problem</span>
 			<ul>
 				<li>
 					<Link to={routes.MICROSOFT}>Microsoft</Link>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { auth } from '../../firebase';
+import { Button } from './../Elements';
 
 const INITIAL_STATE = {
 	error: null,
@@ -42,6 +43,7 @@ class PasswordChangeForm extends Component {
 					type="password"
 					placeholder="New Password"
 				/>
+				<br />
 
 				<input
 					value={passwordTwo}
@@ -51,10 +53,15 @@ class PasswordChangeForm extends Component {
 					type="password"
 					placeholder="Confirm New Password"
 				/>
-
-				<button disabled={isInvalid} type="submit">
+				<br />
+				<Button
+					color="black"
+					disabled={isInvalid}
+					type="submit"
+				>
 					Reset My Password
-				</button>
+				</Button>
+				<br />
 
 				{error && <p>{error.message}</p>}
 			</form>
