@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
+
 import './style.scss';
 const Landing = () => {
 	return (
@@ -17,6 +19,8 @@ const Landing = () => {
 					<Link to={routes.GOOGLE}>Google</Link>
 				</li>
 			</ul>
+			<hr />
+		
 		</div>
 	);
 };
