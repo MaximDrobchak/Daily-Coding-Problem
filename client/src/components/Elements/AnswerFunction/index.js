@@ -4,20 +4,48 @@ import * as actionsType from '../../../constants/actionsType';
 import './style.scss';
 import { Button } from '../';
 
-function doAdd(answer) {
-	return {};
-}
+// const  fetchData = async params => {
+// 	const response = await fetch('/api/world', {
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 		},
+// 		body: JSON.stringify({ post: params }),
+// 	});
+// 	const body = await response.text();
+// 	return body
+// }
+
 class AnswerFunction extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { value: '' };
+		this.state = {
+			value: '',
+			decision: '',
+		};
+	}
+
+	async componentDidMount() {
+		const { userEmail } = this.props;
+
+		const response = await fetch('/api/world', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ post: userEmail }),
+		});
+
+		const body = await response.text();
+		this.setState({ decision: body });
 	}
 
 	onChange = e => this.setState({ value: e.target.value });
+
 	onSubmit = e => {
 		e.preventDefault();
-		const { onSend } = this.props;
 
+		const { onSend } = this.props;
 		const { value } = this.state;
 
 		onSend(value);
@@ -26,6 +54,7 @@ class AnswerFunction extends React.Component {
 	render() {
 		return (
 			<form onSubmit={e => this.onSubmit(e)}>
+				<h1>{this.state.decision}</h1>
 				<textarea
 					value={this.state.value}
 					onChange={this.onChange}
@@ -41,7 +70,9 @@ class AnswerFunction extends React.Component {
 		);
 	}
 }
-
+const mapSetToProps = state => ({
+	userEmail: state.sessionState.authUser.email,
+});
 const mapDispatchToProps = dispatch => ({
 	onSend: value =>
 		dispatch({
@@ -51,6 +82,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-	null,
+	mapSetToProps,
 	mapDispatchToProps,
 )(AnswerFunction);

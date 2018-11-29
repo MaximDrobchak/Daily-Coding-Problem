@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
@@ -13,8 +14,29 @@ app.get('/api/hello', (req, res) => {
 	res.send({ express: 'Hello From Express' });
 });
 
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('./server/db/mydb.db');
+
 app.post('/api/world', (req, res) => {
-	console.log(req.body);
+	console.log(req.body.post);
+
+	db.serialize(function() {
+		db.run('CREATE TABLE if not exists users (info TEXT)');
+		const stmt = db.prepare('INSERT INTO users VALUES (?)');
+		stmt.run(req.body.post);
+
+		stmt.finalize();
+
+		db.each('SELECT rowid AS id, info FROM users', function(
+			err,
+			row,
+		) {
+			console.log(row.id + ': ' + row.email);
+		});
+	});
+
+	db.close();
+
 	res.send(
 		`I received your POST request. This is what you sent me: ${req
 			.body.post}`,

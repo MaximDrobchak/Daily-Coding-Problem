@@ -6,7 +6,11 @@ import { firebase } from '../../firebase';
 
 const withAuntefication = Component => {
 	class WithAuntefication extends React.Component {
-		componentDidMount() {
+		state = {
+			post: '',
+			responseToPost: '',
+		};
+		async componentDidMount() {
 			const { onSetAuthUser } = this.props;
 
 			firebase.auth.onAuthStateChanged(authUser =>

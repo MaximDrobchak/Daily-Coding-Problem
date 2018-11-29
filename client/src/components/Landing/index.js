@@ -8,6 +8,7 @@ const Landing = () => {
 	return (
 		<div className="LandingBar">
 			<span>Daily Coding Problem</span>
+
 			<ul>
 				<li>
 					<Link to={routes.MICROSOFT}>Microsoft</Link>
@@ -20,7 +21,6 @@ const Landing = () => {
 				</li>
 			</ul>
 			<hr />
-		
 		</div>
 	);
 };
