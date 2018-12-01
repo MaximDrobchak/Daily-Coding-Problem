@@ -21,23 +21,7 @@ class AnswerFunction extends React.Component {
 		super(props);
 		this.state = {
 			value: '',
-			decision: '',
 		};
-	}
-
-	async componentDidMount() {
-		const { userEmail } = this.props;
-
-		const response = await fetch('/api/world', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ post: userEmail }),
-		});
-
-		const body = await response.text();
-		this.setState({ decision: body });
 	}
 
 	onChange = e => this.setState({ value: e.target.value });
@@ -70,9 +54,11 @@ class AnswerFunction extends React.Component {
 		);
 	}
 }
-const mapSetToProps = state => ({
-	userEmail: state.sessionState.authUser.email,
-});
+
+// const mapSetToProps = state => ({
+// 	userEmail: state.sessionState.authUser.email,
+// });
+
 const mapDispatchToProps = dispatch => ({
 	onSend: value =>
 		dispatch({
@@ -82,6 +68,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-	mapSetToProps,
+	null,
 	mapDispatchToProps,
 )(AnswerFunction);

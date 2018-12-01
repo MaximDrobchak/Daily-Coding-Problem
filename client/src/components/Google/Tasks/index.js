@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { doUpdateList } from '../../actions/';
+import { doUpdateList } from '../../../actions/';
 
-import { AnswerFunction } from '../Elements';
+import { AnswerFunction } from '../../Elements';
 
 class Tasks extends React.Component {
 	async componentDidMount() {
@@ -21,12 +21,13 @@ class Tasks extends React.Component {
 
 	render() {
 		const { list } = this.props;
-		console.log(Object.values(list));
+		console.log(list);
 		return (
 			<div>
 				<ul>
-					{Object.values(list)[0].map((item, index) => (
+					{Object.values(list).map((item, index) => (
 						<li key={index}>
+							<span>{item.id}</span>
 							<p>{item.description}</p>
 						</li>
 					))}
